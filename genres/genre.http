@@ -14,4 +14,16 @@ Content-Type: application/json
 @genreID = {{ createGenre.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/genres/{{ genreID }}
+GET http://127.0.0.1:8000/genres/{{ genreID }}/
+
+
+###
+PUT http://127.0.0.1:8000/genres/{{ genreID }}/
+Content-Type: application/json
+
+{
+  "name": "Drama Alterado"
+}
+
+###
+DELETE http://127.0.0.1:8000/genres/{{ genreID }}/
