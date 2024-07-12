@@ -1,0 +1,17 @@
+GET http://127.0.0.1:8000/genres/
+
+###
+# @name createGenre
+POST http://127.0.0.1:8000/genres/
+Content-Type: application/json
+
+{
+  "name": "Drama"
+}
+
+###
+
+@genreID = {{ createGenre.response.body.id }}
+
+###
+GET http://127.0.0.1:8000/genres/{{ genreID }}
