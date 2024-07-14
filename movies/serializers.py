@@ -7,3 +7,17 @@ class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = "__all__"
+
+    def validate_release_date(self, value):
+        if value.year < 1990:
+            raise serializers.ValidationError(
+                "A data de lançamento não deve ser anterior a 1990"
+            )
+        return value
+
+    def validate_resume(self, value):
+        if len(value) > 200:
+            raise serializers.ValidationError(
+                "Resumo nao deve ser maior que 200 caracteres"
+            )
+        return value
