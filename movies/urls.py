@@ -2,6 +2,8 @@ from django.urls import path
 
 from movies.views import MovieCreateListView, MovieRetrieveUpdateDestroyView
 
+app_name = "movies"
+
 urlpatterns = [
     path("", MovieCreateListView.as_view(), name="create-list"),
     path(
