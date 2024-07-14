@@ -1,0 +1,40 @@
+######################################################
+######################################################
+############# Request flix-api GENRES ################
+######################################################
+######################################################
+######################################################
+
+GET http://127.0.0.1:8000/reviews/
+
+###
+# @name createReview
+POST http://127.0.0.1:8000/reviews/
+Content-Type: application/json
+
+{
+    "stars": 4,
+    "comment": "Muito Bom!",
+    "movie": 2
+}
+
+###
+
+@reviewID = {{ createReview.response.body.id }}
+
+###
+GET http://127.0.0.1:8000/reviews/{{ reviewID }}/
+
+
+###
+PUT http://127.0.0.1:8000/reviews/{{ reviewID }}/
+Content-Type: application/json
+
+{
+    "stars": 5,
+    "comment": "Excelente",
+    "movie": 2
+}
+
+###
+DELETE http://127.0.0.1:8000/reviews/{{ reviewID }}/
