@@ -1,0 +1,44 @@
+######################################################
+######################################################
+############# Request flix-api GENRES ################
+######################################################
+######################################################
+######################################################
+
+GET http://127.0.0.1:8000/movies/
+
+###
+# @name createMovie
+POST http://127.0.0.1:8000/movies/
+Content-Type: application/json
+
+{
+    "title": "Rambo IV",
+    "release_date": "1990-01-01",
+    "resume": "Filme do Rambo, muito massa",
+    "genre": 1,
+    "actors": [1, 2]
+}
+
+###
+
+@movieID = {{ createMovie.response.body.id }}
+
+###
+GET http://127.0.0.1:8000/movies/{{ movieID }}/
+
+
+###
+PUT http://127.0.0.1:8000/movies/{{ movieID }}/
+Content-Type: application/json
+
+{
+    "title": "Rambo IV",
+    "release_date": "1990-01-01",
+    "resume": "Filme do Rambo, muito massa. Bom elenco",
+    "genre": 2,
+    "actors": [1, 2]
+}
+
+###
+DELETE http://127.0.0.1:8000/movies/{{ movieID }}/

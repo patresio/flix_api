@@ -1,0 +1,39 @@
+######################################################
+######################################################
+############# Request flix-api GENRES ################
+######################################################
+######################################################
+######################################################
+
+GET http://127.0.0.1:8000/actors/
+
+###
+# @name createActor
+POST http://127.0.0.1:8000/actors/
+Content-Type: application/json
+
+{
+  "name": "Silvester Stalone",
+  "birthday": "1990-03-01",
+  "nationality": "American"
+}
+
+###
+
+@actorID = {{ createActor.response.body.id }}
+
+###
+GET http://127.0.0.1:8000/actors/{{ actorID }}/
+
+
+###
+PUT http://127.0.0.1:8000/actors/{{ actorID }}/
+Content-Type: application/json
+
+{
+  "name": "Silvester Stalone Rambo",
+  "nationality": "Mexican"
+}
+
+###
+DELETE http://127.0.0.1:8000/actors/{{ actorID }}/

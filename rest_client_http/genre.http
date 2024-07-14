@@ -1,0 +1,36 @@
+######################################################
+######################################################
+############# Request flix-api GENRES ################
+######################################################
+######################################################
+######################################################
+
+GET http://127.0.0.1:8000/genres/
+
+###
+# @name createGenre
+POST http://127.0.0.1:8000/genres/
+Content-Type: application/json
+
+{
+  "name": "Ação"
+}
+
+###
+
+@genreID = {{ createGenre.response.body.id }}
+
+###
+GET http://127.0.0.1:8000/genres/{{ genreID }}/
+
+
+###
+PUT http://127.0.0.1:8000/genres/{{ genreID }}/
+Content-Type: application/json
+
+{
+  "name": "Ação Pesada"
+}
+
+###
+DELETE http://127.0.0.1:8000/genres/{{ genreID }}/
