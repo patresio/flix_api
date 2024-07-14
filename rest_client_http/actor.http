@@ -5,11 +5,11 @@
 ######################################################
 ######################################################
 
-GET http://127.0.0.1:8000/actors/
+GET http://127.0.0.1:8000/api/v1/actors/
 
 ###
 # @name createActor
-POST http://127.0.0.1:8000/actors/
+POST http://127.0.0.1:8000/api/v1/actors/
 Content-Type: application/json
 
 {
@@ -23,11 +23,11 @@ Content-Type: application/json
 @actorID = {{ createActor.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/actors/{{ actorID }}/
+GET http://127.0.0.1:8000/api/v1/actors/{{ actorID }}/
 
 
 ###
-PUT http://127.0.0.1:8000/actors/{{ actorID }}/
+PUT http://127.0.0.1:8000/api/v1/actors/{{ actorID }}/
 Content-Type: application/json
 
 {
@@ -36,4 +36,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/actors/{{ actorID }}/
+DELETE http://127.0.0.1:8000/api/v1/actors/{{ actorID }}/

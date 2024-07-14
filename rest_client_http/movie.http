@@ -5,11 +5,11 @@
 ######################################################
 ######################################################
 
-GET http://127.0.0.1:8000/movies/
+GET http://127.0.0.1:8000/api/v1/movies/
 
 ###
 # @name createMovie
-POST http://127.0.0.1:8000/movies/
+POST http://127.0.0.1:8000/api/v1/movies/
 Content-Type: application/json
 
 {
@@ -25,11 +25,11 @@ Content-Type: application/json
 @movieID = {{ createMovie.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/movies/{{ movieID }}/
+GET http://127.0.0.1:8000/api/v1/movies/{{ movieID }}/
 
 
 ###
-PUT http://127.0.0.1:8000/movies/{{ movieID }}/
+PUT http://127.0.0.1:8000/api/v1/movies/{{ movieID }}/
 Content-Type: application/json
 
 {
@@ -41,4 +41,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/movies/{{ movieID }}/
+DELETE http://127.0.0.1:8000/api/v1/movies/{{ movieID }}/

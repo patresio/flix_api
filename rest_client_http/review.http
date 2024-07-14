@@ -5,11 +5,11 @@
 ######################################################
 ######################################################
 
-GET http://127.0.0.1:8000/reviews/
+GET http://127.0.0.1:8000/api/v1/reviews/
 
 ###
 # @name createReview
-POST http://127.0.0.1:8000/reviews/
+POST http://127.0.0.1:8000/api/v1/reviews/
 Content-Type: application/json
 
 {
@@ -23,11 +23,11 @@ Content-Type: application/json
 @reviewID = {{ createReview.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/reviews/{{ reviewID }}/
+GET http://127.0.0.1:8000/api/v1/reviews/{{ reviewID }}/
 
 
 ###
-PUT http://127.0.0.1:8000/reviews/{{ reviewID }}/
+PUT http://127.0.0.1:8000/api/v1/reviews/{{ reviewID }}/
 Content-Type: application/json
 
 {
@@ -37,4 +37,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/reviews/{{ reviewID }}/
+DELETE http://127.0.0.1:8000/api/v1/reviews/{{ reviewID }}/

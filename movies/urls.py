@@ -5,9 +5,9 @@ from movies.views import MovieCreateListView, MovieRetrieveUpdateDestroyView
 app_name = "movies"
 
 urlpatterns = [
-    path("", MovieCreateListView.as_view(), name="create-list"),
+    path("movies/", MovieCreateListView.as_view(), name="create-list"),
     path(
-        "<int:pk>/",
+        "movies/<int:pk>/",
         MovieRetrieveUpdateDestroyView.as_view(),
         name="retrieve-update-destroy",
     ),
