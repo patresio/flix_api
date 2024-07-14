@@ -13,7 +13,7 @@ POST http://127.0.0.1:8000/genres/
 Content-Type: application/json
 
 {
-  "name": "Drama"
+  "name": "Ação"
 }
 
 ###
@@ -29,7 +29,7 @@ PUT http://127.0.0.1:8000/genres/{{ genreID }}/
 Content-Type: application/json
 
 {
-  "name": "Drama Alterado"
+  "name": "Ação Pesada"
 }
 
 ###
