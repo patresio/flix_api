@@ -8,12 +8,24 @@
 @hostname = 127.0.0.1
 @port = 8000
 
+###
+# @name createToken
+POST http://{{ hostname }}:{{ port }}/api/v1/auth/token/
+Content-Type: application/json
 
+{
+  "username": "mytoken",
+  "password": "Token2024"
+}
+
+###
 GET http://{{ hostname }}:{{ port }}/api/v1/actors/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxMDY2OTE2LCJpYXQiOjE3MjEwNjY2MTYsImp0aSI6Ijc5YzIwNzNlYjE5OTQzYmE4ZjEwNTlmMjMzYTAzYmRiIiwidXNlcl9pZCI6MX0.QWFlqJFNnfiavMgQk7AlKPI4jxqoeqDeMwoseOJSAz0
 
 ###
 # @name createActor
 POST http://{{ hostname }}:{{ port }}/api/v1/actors/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxMDY2OTE2LCJpYXQiOjE3MjEwNjY2MTYsImp0aSI6Ijc5YzIwNzNlYjE5OTQzYmE4ZjEwNTlmMjMzYTAzYmRiIiwidXNlcl9pZCI6MX0.QWFlqJFNnfiavMgQk7AlKPI4jxqoeqDeMwoseOJSAz0
 Content-Type: application/json
 
 {
