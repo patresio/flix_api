@@ -5,11 +5,15 @@
 ######################################################
 ######################################################
 
-GET http://127.0.0.1:8000/api/v1/movies/
+@hostname = 127.0.0.1
+@port = 8000
+
+
+GET http://{{ hostname }}:{{ port }}/api/v1/movies/
 
 ###
 # @name createMovie
-POST http://127.0.0.1:8000/api/v1/movies/
+POST http://{{ hostname }}:{{ port }}/api/v1/movies/
 Content-Type: application/json
 
 {
@@ -17,7 +21,7 @@ Content-Type: application/json
     "release_date": "1990-01-01",
     "resume": "Filme do Rambo, muito massa",
     "genre": 1,
-    "actors": [1, 2]
+    "actors": [1]
 }
 
 ###
@@ -25,11 +29,11 @@ Content-Type: application/json
 @movieID = {{ createMovie.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/api/v1/movies/{{ movieID }}/
+GET http://{{ hostname }}:{{ port }}/api/v1/movies/{{ movieID }}/
 
 
 ###
-PUT http://127.0.0.1:8000/api/v1/movies/{{ movieID }}/
+PUT http://{{ hostname }}:{{ port }}/api/v1/movies/{{ movieID }}/
 Content-Type: application/json
 
 {
@@ -41,4 +45,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/api/v1/movies/{{ movieID }}/
+DELETE http://{{ hostname }}:{{ port }}/api/v1/movies/{{ movieID }}/

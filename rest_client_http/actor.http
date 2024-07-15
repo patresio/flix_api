@@ -1,15 +1,19 @@
 ######################################################
 ######################################################
-############# Request flix-api GENRES ################
+############# Request flix-api ACTORS ################
 ######################################################
 ######################################################
 ######################################################
 
-GET http://127.0.0.1:8000/api/v1/actors/
+@hostname = 127.0.0.1
+@port = 8000
+
+
+GET http://{{ hostname }}:{{ port }}/api/v1/actors/
 
 ###
 # @name createActor
-POST http://127.0.0.1:8000/api/v1/actors/
+POST http://{{ hostname }}:{{ port }}/api/v1/actors/
 Content-Type: application/json
 
 {
@@ -23,11 +27,11 @@ Content-Type: application/json
 @actorID = {{ createActor.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/api/v1/actors/{{ actorID }}/
+GET http://{{ hostname }}:{{ port }}/api/v1/actors/{{ actorID }}/
 
 
 ###
-PUT http://127.0.0.1:8000/api/v1/actors/{{ actorID }}/
+PUT http://{{ hostname }}:{{ port }}/api/v1/actors/{{ actorID }}/
 Content-Type: application/json
 
 {
@@ -36,4 +40,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/api/v1/actors/{{ actorID }}/
+DELETE http://{{ hostname }}:{{ port }}/api/v1/actors/{{ actorID }}/

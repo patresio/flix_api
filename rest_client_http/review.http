@@ -1,21 +1,25 @@
-    ######################################################
 ######################################################
-############# Request flix-api GENRES ################
+######################################################
+############# Request flix-api REVIEWS ###############
 ######################################################
 ######################################################
 ######################################################
 
-GET http://127.0.0.1:8000/api/v1/reviews/
+@hostname = 127.0.0.1
+@port = 8000
+
+
+GET http://{{ hostname }}:{{ port }}/api/v1/reviews/
 
 ###
 # @name createReview
-POST http://127.0.0.1:8000/api/v1/reviews/
+POST http://{{ hostname }}:{{ port }}/api/v1/reviews/
 Content-Type: application/json
 
 {
     "stars": 5,
     "comment": "Muito Bom!",
-    "movie": 2
+    "movie": 1
 }
 
 ###
@@ -23,11 +27,11 @@ Content-Type: application/json
 @reviewID = {{ createReview.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/api/v1/reviews/{{ reviewID }}/
+GET http://{{ hostname }}:{{ port }}/api/v1/reviews/{{ reviewID }}/
 
 
 ###
-PUT http://127.0.0.1:8000/api/v1/reviews/{{ reviewID }}/
+PUT http://{{ hostname }}:{{ port }}/api/v1/reviews/{{ reviewID }}/
 Content-Type: application/json
 
 {
@@ -37,4 +41,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/api/v1/reviews/{{ reviewID }}/
+DELETE http://{{ hostname }}:{{ port }}/api/v1/reviews/{{ reviewID }}/

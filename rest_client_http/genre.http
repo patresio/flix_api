@@ -5,11 +5,15 @@
 ######################################################
 ######################################################
 
-GET http://127.0.0.1:8000/api/v1/genres/
+@hostname = 127.0.0.1
+@port = 8000
+
+
+GET http://{{ hostname }}:{{ port }}/api/v1/genres/
 
 ###
 # @name createGenre
-POST http://127.0.0.1:8000/api/v1/genres/
+POST http://{{ hostname }}:{{ port }}/api/v1/genres/
 Content-Type: application/json
 
 {
@@ -21,11 +25,11 @@ Content-Type: application/json
 @genreID = {{ createGenre.response.body.id }}
 
 ###
-GET http://127.0.0.1:8000/api/v1/genres/{{ genreID }}/
+GET http://{{ hostname }}:{{ port }}/api/v1/genres/{{ genreID }}/
 
 
 ###
-PUT http://127.0.0.1:8000/api/v1/genres/{{ genreID }}/
+PUT http://{{ hostname }}:{{ port }}/api/v1/genres/{{ genreID }}/
 Content-Type: application/json
 
 {
@@ -33,4 +37,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:8000/api/v1/genres/{{ genreID }}/
+DELETE http://{{ hostname }}:{{ port }}/api/v1/genres/{{ genreID }}/
