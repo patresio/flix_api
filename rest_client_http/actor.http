@@ -20,7 +20,7 @@ Content-Type: application/json
 
 ###
 GET http://{{ hostname }}:{{ port }}/api/v1/actors/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxMDY2OTE2LCJpYXQiOjE3MjEwNjY2MTYsImp0aSI6Ijc5YzIwNzNlYjE5OTQzYmE4ZjEwNTlmMjMzYTAzYmRiIiwidXNlcl9pZCI6MX0.QWFlqJFNnfiavMgQk7AlKPI4jxqoeqDeMwoseOJSAz0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxMDY5Njc3LCJpYXQiOjE3MjEwNjkzNzcsImp0aSI6ImY0NDM5MzJlODk0YzQ4NDNhZmI0OWMyZjczYjA1ZGFlIiwidXNlcl9pZCI6MX0.hBg_pE6LfE3Q-stqCJgsvzDIicbmsQJx2Py0Ey2Ab3Q
 
 ###
 # @name createActor
