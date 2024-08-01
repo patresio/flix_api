@@ -8,12 +8,24 @@
 @hostname = 127.0.0.1
 @port = 8000
 
+###
+# @name createToken
+POST http://{{ hostname }}:{{ port }}/api/v1/auth/token/
+Content-Type: application/json
 
+{
+  "username": "usuario",
+  "password": "NovaSenha100"
+}
+
+###
 GET http://{{ hostname }}:{{ port }}/api/v1/reviews/
+Authorization: Bearer {{ createToken.response.body.access }}
 
 ###
 # @name createReview
 POST http://{{ hostname }}:{{ port }}/api/v1/reviews/
+Authorization: Bearer {{ createToken.response.body.access }}
 Content-Type: application/json
 
 {
@@ -28,10 +40,12 @@ Content-Type: application/json
 
 ###
 GET http://{{ hostname }}:{{ port }}/api/v1/reviews/{{ reviewID }}/
+Authorization: Bearer {{ createToken.response.body.access }}
 
 
 ###
 PUT http://{{ hostname }}:{{ port }}/api/v1/reviews/{{ reviewID }}/
+Authorization: Bearer {{ createToken.response.body.access }}
 Content-Type: application/json
 
 {
@@ -42,3 +56,4 @@ Content-Type: application/json
 
 ###
 DELETE http://{{ hostname }}:{{ port }}/api/v1/reviews/{{ reviewID }}/
+Authorization: Bearer {{ createToken.response.body.access }}

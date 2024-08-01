@@ -14,6 +14,7 @@ class Review(models.Model):
         ]
     )
     comment = models.TextField(null=True, blank=True)
+    # user = models.ForeignKey(User, related_name="reviews", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.movie

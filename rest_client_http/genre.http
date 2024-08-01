@@ -15,8 +15,8 @@ POST http://{{ hostname }}:{{ port }}/api/v1/auth/token/
 Content-Type: application/json
 
 {
-  "username": "usuario",
-  "password": "NovaSenha100"
+  "username": "Cinemark",
+  "password": "djangomaster"
 }
 
 ###

@@ -9,11 +9,28 @@
 @port = 8000
 
 
+###
+# @name createToken
+POST http://{{ hostname }}:{{ port }}/api/v1/auth/token/
+Content-Type: application/json
+
+{
+  "username": "usuario",
+  "password": "NovaSenha100"
+}
+
+###
 GET http://{{ hostname }}:{{ port }}/api/v1/movies/
+Authorization: Bearer {{ createToken.response.body.access }}
+
+###
+GET http://{{ hostname }}:{{ port }}/api/v1/movies/stats/
+Authorization: Bearer {{ createToken.response.body.access }}
 
 ###
 # @name createMovie
 POST http://{{ hostname }}:{{ port }}/api/v1/movies/
+Authorization: Bearer {{ createToken.response.body.access }}
 Content-Type: application/json
 
 {
@@ -30,10 +47,12 @@ Content-Type: application/json
 
 ###
 GET http://{{ hostname }}:{{ port }}/api/v1/movies/{{ movieID }}/
+Authorization: Bearer {{ createToken.response.body.access }}
 
 
 ###
 PUT http://{{ hostname }}:{{ port }}/api/v1/movies/{{ movieID }}/
+Authorization: Bearer {{ createToken.response.body.access }}
 Content-Type: application/json
 
 {
@@ -46,3 +65,4 @@ Content-Type: application/json
 
 ###
 DELETE http://{{ hostname }}:{{ port }}/api/v1/movies/{{ movieID }}/
+Authorization: Bearer {{ createToken.response.body.access }}

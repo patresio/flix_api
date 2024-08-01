@@ -1,6 +1,10 @@
 from django.urls import path
 
-from movies.views import MovieCreateListView, MovieRetrieveUpdateDestroyView
+from movies.views import (
+    MovieCreateListView,
+    MovieRetrieveUpdateDestroyView,
+    MovieStatsView,
+)
 
 app_name = "movies"
 
@@ -11,4 +15,5 @@ urlpatterns = [
         MovieRetrieveUpdateDestroyView.as_view(),
         name="retrieve-update-destroy",
     ),
+    path("movies/stats/", MovieStatsView.as_view(), name="stats"),
 ]
