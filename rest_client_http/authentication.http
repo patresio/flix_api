@@ -14,8 +14,8 @@ POST http://{{ hostname }}:{{ port }}/api/v1/auth/token/
 Content-Type: application/json
 
 {
-  "username": "mytoken",
-  "password": "Token2024"
+  "username": "usuario",
+  "password": "NovaSenha100"
 }
 
 ###

@@ -14,18 +14,18 @@ POST http://{{ hostname }}:{{ port }}/api/v1/auth/token/
 Content-Type: application/json
 
 {
-  "username": "mytoken",
-  "password": "Token2024"
+  "username": "usuario",
+  "password": "NovaSenha100"
 }
 
 ###
 GET http://{{ hostname }}:{{ port }}/api/v1/actors/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxMDY5Njc3LCJpYXQiOjE3MjEwNjkzNzcsImp0aSI6ImY0NDM5MzJlODk0YzQ4NDNhZmI0OWMyZjczYjA1ZGFlIiwidXNlcl9pZCI6MX0.hBg_pE6LfE3Q-stqCJgsvzDIicbmsQJx2Py0Ey2Ab3Q
+Authorization: Bearer {{ createToken.response.body.access }}
 
 ###
 # @name createActor
 POST http://{{ hostname }}:{{ port }}/api/v1/actors/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxMDY2OTE2LCJpYXQiOjE3MjEwNjY2MTYsImp0aSI6Ijc5YzIwNzNlYjE5OTQzYmE4ZjEwNTlmMjMzYTAzYmRiIiwidXNlcl9pZCI6MX0.QWFlqJFNnfiavMgQk7AlKPI4jxqoeqDeMwoseOJSAz0
+Authorization: Bearer {{ createToken.response.body.access }}
 Content-Type: application/json
 
 {
@@ -40,10 +40,11 @@ Content-Type: application/json
 
 ###
 GET http://{{ hostname }}:{{ port }}/api/v1/actors/{{ actorID }}/
-
+Authorization: Bearer {{ createToken.response.body.access }}
 
 ###
 PUT http://{{ hostname }}:{{ port }}/api/v1/actors/{{ actorID }}/
+Authorization: Bearer {{ createToken.response.body.access }}
 Content-Type: application/json
 
 {
@@ -53,3 +54,4 @@ Content-Type: application/json
 
 ###
 DELETE http://{{ hostname }}:{{ port }}/api/v1/actors/{{ actorID }}/
+Authorization: Bearer {{ createToken.response.body.access }}
