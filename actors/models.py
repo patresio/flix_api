@@ -4,6 +4,7 @@ from django.db import models
 
 NATIONALITY_CHOICES = (
     ("American", "American"),
+    ("Brazilian", "Brazilian"),
     ("British", "British"),
     ("Canadian", "Canadian"),
     ("Mexican", "Mexican"),
@@ -24,7 +25,9 @@ NATIONALITY_CHOICES = (
 class Actor(models.Model):
     name = models.CharField(max_length=200)
     birthday = models.DateField(null=True, blank=True)
-    nationality = models.CharField(max_length=100, choices=NATIONALITY_CHOICES)
+    nationality = models.CharField(
+        max_length=100, choices=NATIONALITY_CHOICES, default="American"
+    )
 
     def __str__(self):
         return self.name
