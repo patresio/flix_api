@@ -2,3 +2,5 @@ SECRET_KEY = "django-insecure-c#gc)+2+kn-cb&v$=p8_n3$x#urc!crybq)1gqgs6)2ygrqjz6
 DEBUG = True
 ALLOWED_HOSTS = localhost, 127.0.0.1
 DATABASE_URL = "sqlite:///db.sqlite3"
+ACCESS_TOKEN_LIFETIME = 1
+REFRESH_TOKEN_LIFETIME = 7

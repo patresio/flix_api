@@ -123,6 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "static/"
 
 # Default primary key field type
@@ -137,6 +138,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=config("ACCESS_TOKEN_LIFETIME", cast=int)),
+    "REFRESH_TOKEN_LIFETIME": timedelta(
+        days=config("REFRESH_TOKEN_LIFETIME", cast=int)
+    ),
 }
