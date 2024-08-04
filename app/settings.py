@@ -88,6 +88,7 @@ WSGI_APPLICATION = "app.wsgi.application"
 
 default_dburl = config("DATABASE_URL", cast=str)
 DATABASES = {"default": dburl(default_dburl, conn_max_age=600)}
+DATABASES["default"]["OPTIONS"]["init_command"] = "SET innodb_strict_mode=1"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
