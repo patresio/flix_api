@@ -1,5 +1,5 @@
 import csv
-import datetime
+from datetime import datetime
 
 from django.core.management.base import BaseCommand
 
@@ -18,7 +18,7 @@ class Command(BaseCommand):
             reader = csv.DictReader(csv_file)
             for row in reader:
                 name = row["name"]
-                birthday = datetime.strftime(row["birthday"], "%Y-%m-%d").date()
+                birthday = datetime.strptime(row["birthday"], "%Y-%m-%d").date()
                 nationality = row["nationality"]
 
                 actor = Actor.objects.create(
