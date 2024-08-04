@@ -15,7 +15,7 @@ POST http://{{ hostname }}:{{ port }}/api/v1/auth/token/
 Content-Type: application/json
 
 {
-  "username": "Cinemark",
+  "username": "cinemark",
   "password": "djangomaster"
 }
 
@@ -34,11 +34,11 @@ Authorization: Bearer {{ createToken.response.body.access }}
 Content-Type: application/json
 
 {
-    "title": "Rambo IV",
-    "release_date": "1990-01-01",
-    "resume": "Filme do Rambo, muito massa",
-    "genre": 1,
-    "actors": [1]
+    "title": "Tropa de Elite",
+    "release_date": "2007-08-17",
+    "resume": "Os acontecimentos do filme são narrados em primeira pessoa pelo Capitão Roberto Nascimento, dando uma perspectiva ao espectador de todos os fatos interligados.",
+    "genre": 22,
+    "actors": [3, 7, 9, 18]
 }
 
 ###
